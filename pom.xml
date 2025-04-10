@@ -33,12 +33,12 @@
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.28</version>
 			<optional>true</optional>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -52,19 +52,6 @@
 
 	</dependencies>
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.10.1</version>
-				<configuration>
-					<release>${java.version}</release>
-					<compilerArgs>
-						<arg>--add-opens</arg>
-						<arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
-					</compilerArgs>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
