@@ -11,7 +11,7 @@ pipeline {
         git 'https://github.com/Rubankumar-13/cicd_with_jenkins.git'
         script{
                 def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
-                sh "${mvnHome}/bin/mvn package"
+                bat "${mvnHome}\\bin\\mvn package"
         }
       }
     }
