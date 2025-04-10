@@ -22,7 +22,7 @@ public class K8SDemoApplication {
 }
 
 
-@Slf4j
+
 @RestController
 class HelloResource {
 
@@ -39,14 +39,15 @@ class HelloResource {
     public ResponseEntity<Health> customHealth() {
         String appName = env.getProperty("spring.application.name");
         String appVersion = env.getProperty("spring.application.version");
+
+        Application appInfo = new Application();
+        appInfo.setName(appName);
+        appInfo.setVersion(appVersion);
+
+
         Health build =
                 Health.status(Status.UP)
-                        .withDetail("info",
-                                Application.builder()
-                                        .name(appName)
-                                        .version(appVersion)
-                                        .build()
-                        )
+                        .withDetail("info",appInfo)
                         .build();
         return ResponseEntity.ok(build);
     }
